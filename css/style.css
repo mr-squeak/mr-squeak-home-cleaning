@@ -1316,67 +1316,129 @@ a img:hover {
 /********** Newsletter *********/
 /*******************************/
 
-/************* WAVES **********/
+/************* SOAP BUBBLES **********/
 
-.wave-container {
+.bubble-container {
     position: absolute;
-    bottom: -55px; /* Move waves down */
-    right: 0;
-    overflow: hidden;
-    line-height: 0;
+    bottom: -80px;
+    left: 0;
     width: 100%;
+    height: 200px;
+    overflow: hidden;
     z-index: 2;
 }
 
-.waves {
-    position: relative;
-    width: 110%; /* Extend beyond screen to avoid borders */
-    height: 12vh;
-    min-height: 60px;
-    max-height: 120px;
+.bubble {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.1), inset 2px 2px 5px rgba(255, 255, 255, 0.3);
+    animation: float-up linear infinite;
 }
 
-.parallax > use {
-    animation: move-waves 15s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+/* Bubble sizes and positions */
+.bubble-1 {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+    opacity: 0.7;
 }
 
-.parallax > use:nth-child(1) {
-    animation-delay: -2s;
+.bubble-2 {
+    width: 60px;
+    height: 60px;
+    left: 20%;
+    animation-duration: 8s;
+    animation-delay: 1s;
+    opacity: 0.6;
+}
+
+.bubble-3 {
+    width: 35px;
+    height: 35px;
+    left: 30%;
     animation-duration: 7s;
-    fill: rgba(255, 255, 255, 0.7);
+    animation-delay: 2s;
+    opacity: 0.75;
 }
 
-.parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-    fill: rgba(255, 255, 255, 0.5);
+.bubble-4 {
+    width: 50px;
+    height: 50px;
+    left: 40%;
+    animation-duration: 9s;
+    animation-delay: 0.5s;
+    opacity: 0.65;
 }
 
-.parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-    fill: rgba(255, 255, 255, 0.3);
+.bubble-5 {
+    width: 45px;
+    height: 45px;
+    left: 50%;
+    animation-duration: 7.5s;
+    animation-delay: 1.5s;
+    opacity: 0.7;
 }
 
-.parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-    fill: #fff;
+.bubble-6 {
+    width: 55px;
+    height: 55px;
+    left: 60%;
+    animation-duration: 8.5s;
+    animation-delay: 0.8s;
+    opacity: 0.6;
 }
 
-@keyframes move-waves {
+.bubble-7 {
+    width: 38px;
+    height: 38px;
+    left: 70%;
+    animation-duration: 6.5s;
+    animation-delay: 2.2s;
+    opacity: 0.72;
+}
+
+.bubble-8 {
+    width: 52px;
+    height: 52px;
+    left: 85%;
+    animation-duration: 9.5s;
+    animation-delay: 1.2s;
+    opacity: 0.65;
+}
+
+@keyframes float-up {
     0% {
-        transform: translateX(-90px);
+        bottom: -100px;
+        opacity: 0;
+        transform: translateX(0) scale(0.8);
+    }
+    10% {
+        opacity: 0.7;
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translateX(30px) scale(1);
+    }
+    90% {
+        opacity: 0.3;
+        transform: translateX(-20px) scale(0.95);
     }
     100% {
-        transform: translateX(85px);
+        bottom: 200px;
+        opacity: 0;
+        transform: translateX(0) scale(0.7);
     }
 }
+
 /* Mobile optimization */
 @media (max-width: 1024px) {
-    .waves {
-        height: 80vh;
-        min-height: 50px;
+    .bubble-container {
+        height: 150px;
     }
 }
 
